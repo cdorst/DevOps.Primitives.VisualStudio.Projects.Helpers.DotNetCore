@@ -14,9 +14,8 @@ namespace DevOps.Primitives.VisualStudio.Projects.Helpers.DotNetCore
                     GetItems(nuGetReferences, projectReferences)));
 
         private static MsBuildItemGroupList GetItems(IEnumerable<NuGetReference> nuGetReferences, IEnumerable<ProjectReference> projectReferences)
-            => nuGetReferences != null || projectReferences != null
-            ? PackageProjectReferenceItems.Create(nuGetReferences, projectReferences)
-            : null;
+            => nuGetReferences == null && projectReferences == null ? null
+            : PackageProjectReferenceItems.Create(nuGetReferences, projectReferences);
 
         private static MsBuildPropertyGroupList GetProperties(NuGetPackageInfo nuGetPackageInfo)
             => PropertyGroupLists.Create(
