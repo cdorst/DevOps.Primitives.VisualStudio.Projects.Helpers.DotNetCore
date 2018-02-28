@@ -17,7 +17,7 @@ namespace DevOps.Primitives.VisualStudio.Projects.Helpers.DotNetCore
             if (info == null) throw new ArgumentNullException(nameof(info));
             var properties = GetNuGetPackageProperties(info);
             return PropertyGroups.Create(
-                properties.OrderBy(p => p.ElementName).ToArray());
+                properties.OrderBy(p => p.ElementName.Value).ToArray());
         }
 
         private static List<MsBuildProperty> GetNuGetPackageProperties(NuGetPackageInfo info)
