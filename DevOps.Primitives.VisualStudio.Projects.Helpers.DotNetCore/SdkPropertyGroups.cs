@@ -7,10 +7,10 @@ namespace DevOps.Primitives.VisualStudio.Projects.Helpers.DotNetCore
 {
     public static class SdkPropertyGroups
     {
-        public static MsBuildPropertyGroup TargetAndLangVersion()
+        public static MsBuildPropertyGroup TargetAndLangVersion(string targetFrameworkMoniker = "netstandard2.0")
             => PropertyGroups.Create(
                 SdkProperties.LangVersion(),
-                SdkProperties.TargetFramework());
+                SdkProperties.TargetFramework(targetFrameworkMoniker));
 
         public static MsBuildPropertyGroup NuGetPackageInfo(NuGetPackageInfo info)
         {
