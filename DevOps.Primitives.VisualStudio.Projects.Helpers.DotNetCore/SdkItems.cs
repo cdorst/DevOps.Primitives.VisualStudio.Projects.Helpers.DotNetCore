@@ -6,12 +6,9 @@ namespace DevOps.Primitives.VisualStudio.Projects.Helpers.DotNetCore
     public static class SdkItems
     {
         public static MsBuildItem NuGetReference(NuGetReference package)
-            => package.ReferenceType == ReferenceType.DotNetCliToolReference
-                ? DotNetCliToolReference(package.Include, package.Version)
-                : PackageReference(package.Include, package.Version);
-
-        public static MsBuildItem DotNetCliToolReference(string include, string version)
-            => GetReference(nameof(DotNetCliToolReference), include, version);
+            => PackageReference(
+                package.Include.Value,
+                package.Version.Value);
 
         public static MsBuildItem PackageReference(string include, string version)
             => GetReference(nameof(PackageReference), include, version);
