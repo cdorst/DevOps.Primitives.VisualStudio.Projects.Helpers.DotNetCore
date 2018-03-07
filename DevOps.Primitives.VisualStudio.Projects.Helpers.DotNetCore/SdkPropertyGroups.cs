@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using static DevOps.Primitives.VisualStudio.Projects.Helpers.DotNetCore.SdkProperties;
 
 namespace DevOps.Primitives.VisualStudio.Projects.Helpers.DotNetCore
 {
@@ -9,8 +10,8 @@ namespace DevOps.Primitives.VisualStudio.Projects.Helpers.DotNetCore
     {
         public static MsBuildPropertyGroup TargetAndLangVersion(string targetFrameworkMoniker = "netstandard2.0")
             => PropertyGroups.Create(
-                SdkProperties.LangVersion(),
-                SdkProperties.TargetFramework(targetFrameworkMoniker));
+                LangVersion(),
+                TargetFramework(targetFrameworkMoniker));
 
         public static MsBuildPropertyGroup NuGetPackageInfo(NuGetPackageInfo info)
         {
@@ -24,12 +25,17 @@ namespace DevOps.Primitives.VisualStudio.Projects.Helpers.DotNetCore
         {
             var properties = new List<MsBuildProperty>
             {
-                SdkProperties.Authors(info.Authors),
-                SdkProperties.Description(info.Description),
-                SdkProperties.Version(info.Version)
+                Authors(info.Authors),
+                Copyright(info.Copyright),
+                Description(info.Description),
+                PackageIconUrl(info.PackageIconUrl),
+                PackageLicenseUrl(info.PackageLicenseUrl),
+                PackageProjectUrl(info.PackageProjectUrl),
+                RepositoryUrl(info.RepositoryUrl),
+                Version(info.Version)
             };
-            if (info.GeneratePackageOnBuild == true) properties.Add(SdkProperties.GeneratePackageOnBuild());
-            if (!string.IsNullOrWhiteSpace(info.PackageId)) properties.Add(SdkProperties.PackageId(info.PackageId));
+            if (info.GeneratePackageOnBuild == true) properties.Add(GeneratePackageOnBuild());
+            if (!string.IsNullOrWhiteSpace(info.PackageId)) properties.Add(PackageId(info.PackageId));
             return properties;
         }
     }
