@@ -10,12 +10,12 @@
     <Description>Helpers for building .NET Core Sdk-based .csproj Visual Studio project files</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>CDorst.DevOps.Primitives.VisualStudio.Projects.Helpers.DotNetCore</PackageId>
-    <Version>6.0.1</Version>
+    <Version>6.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="CDorst.DevOps.Primitives.NuGet" Version="3.1.1" />
-    <PackageReference Include="CDorst.DevOps.Primitives.VisualStudio.Projects.Helpers.Common" Version="1.1.6" />
+    <PackageReference Include="CDorst.DevOps.Primitives.VisualStudio.Projects.Helpers.Common" Version="1.1.7" />
   </ItemGroup>
 
 </Project>
