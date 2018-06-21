@@ -2,40 +2,40 @@
 {
     public static class SdkProperties
     {
-        public static MsBuildProperty Authors(string value)
-            => new MsBuildProperty(nameof(Authors), value, default(string));
+        public static MsBuildProperty Authors(in string value)
+            => new MsBuildProperty(nameof(Authors), in value, default(MsBuildCondition));
 
-        public static MsBuildProperty Copyright(string value)
-            => new MsBuildProperty(nameof(Copyright), value, default(string));
+        public static MsBuildProperty Copyright(in string value)
+            => new MsBuildProperty(nameof(Copyright), in value, default(MsBuildCondition));
 
-        public static MsBuildProperty Description(string value)
-            => new MsBuildProperty(nameof(Description), value, default(string));
+        public static MsBuildProperty Description(in string value)
+            => new MsBuildProperty(nameof(Description), in value, default(MsBuildCondition));
 
         public static MsBuildProperty GeneratePackageOnBuild()
-            => new MsBuildProperty(nameof(GeneratePackageOnBuild), "true", default(string));
+            => new MsBuildProperty(nameof(GeneratePackageOnBuild), "true", default(MsBuildCondition));
 
-        public static MsBuildProperty LangVersion(string value = "latest")
-            => new MsBuildProperty(nameof(LangVersion), value, default(string));
+        public static MsBuildProperty LangVersion(in string value = "latest")
+            => new MsBuildProperty(nameof(LangVersion), in value, default(MsBuildCondition));
 
-        public static MsBuildProperty PackageIconUrl(string value)
-            => new MsBuildProperty(nameof(PackageIconUrl), value, default(string));
+        public static MsBuildProperty PackageIconUrl(in string value)
+            => new MsBuildProperty(nameof(PackageIconUrl), in value, default(MsBuildCondition));
 
-        public static MsBuildProperty PackageId(string value)
-            => new MsBuildProperty(nameof(PackageId), value, default(string));
+        public static MsBuildProperty PackageId(in string value)
+            => new MsBuildProperty(nameof(PackageId), in value, default(MsBuildCondition));
 
-        public static MsBuildProperty PackageLicenseUrl(string value)
-            => new MsBuildProperty(nameof(PackageLicenseUrl), value, default(string));
+        public static MsBuildProperty PackageLicenseUrl(in string value)
+            => new MsBuildProperty(nameof(PackageLicenseUrl), in value, default(MsBuildCondition));
 
-        public static MsBuildProperty PackageProjectUrl(string value)
-            => new MsBuildProperty(nameof(PackageProjectUrl), value, default(string));
+        public static MsBuildProperty PackageProjectUrl(in string value)
+            => new MsBuildProperty(nameof(PackageProjectUrl), in value, default(MsBuildCondition));
 
-        public static MsBuildProperty RepositoryUrl(string value)
-            => new MsBuildProperty(nameof(RepositoryUrl), value, default(string));
+        public static MsBuildProperty RepositoryUrl(in string value)
+            => new MsBuildProperty(nameof(RepositoryUrl), in value, default(MsBuildCondition));
 
-        public static MsBuildProperty TargetFramework(string value = "netstandard2.0")
-            => new MsBuildProperty(nameof(TargetFramework), value, default(string));
+        public static MsBuildProperty TargetFramework(in string value = TargetFrameworkMonikers.TargetFramework)
+            => new MsBuildProperty(nameof(TargetFramework), in value, default(MsBuildCondition));
 
-        public static MsBuildProperty Version(string value)
-            => new MsBuildProperty(nameof(Version), value, default(string));
+        public static MsBuildProperty Version(in string value)
+            => new MsBuildProperty(nameof(Version), in value, default(MsBuildCondition));
     }
 }

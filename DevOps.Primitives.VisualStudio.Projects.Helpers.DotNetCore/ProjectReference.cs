@@ -3,7 +3,7 @@
     public class ProjectReference
     {
         public ProjectReference() { }
-        public ProjectReference(string relativePath) { Include = relativePath; }
+        public ProjectReference(in string relativePath) => Include = relativePath;
 
         public string Include { get; set; }
     }

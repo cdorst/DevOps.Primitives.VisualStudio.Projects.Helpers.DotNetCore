@@ -3,7 +3,17 @@
     public class NuGetPackageInfo
     {
         public NuGetPackageInfo() { }
-        public NuGetPackageInfo(string version, string authors, string copyright, string description, string packageIconUrl, string packageLicenseUrl, string packageProjectUrl, string repositoryUrl, bool? generatePackageOnBuild = false, string packageId = null)
+        public NuGetPackageInfo(
+            in string version,
+            in string authors,
+            in string copyright,
+            in string description,
+            in string packageIconUrl,
+            in string packageLicenseUrl,
+            in string packageProjectUrl,
+            in string repositoryUrl,
+            in bool? generatePackageOnBuild = false,
+            in string packageId = default)
         {
             Authors = authors;
             Copyright = copyright;

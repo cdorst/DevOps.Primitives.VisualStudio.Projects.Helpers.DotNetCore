@@ -9,7 +9,7 @@ namespace DevOps.Primitives.VisualStudio.Projects.Helpers.DotNetCore
         public static MsBuildItemGroup Create(params NuGetReference[] packages)
         {
             var items = new List<MsBuildItem>();
-            foreach (var package in packages) items.Add(SdkItems.NuGetReference(package));
+            foreach (var package in packages) items.Add(SdkItems.NuGetReference(in package));
             return ItemGroups.Create(items.ToArray());
         }
     }
